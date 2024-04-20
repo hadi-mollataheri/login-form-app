@@ -12,16 +12,27 @@ function Form(props) {
     props.setEmail(target.value);
   };
 
-  return (
-    <div id="form-container" className="border-30px p-3 border-green-600 flex flex-col items-center">
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    props.setIsSubmit(true);
+  };
 
-      <div id="submit-answer" className="p-3 m-1 w-full bg-blue-500 text-white">
-        <p className="p-0 m-0`">Success! Thank you for registering</p>
-      </div>
+  return (
+    <div
+      id="form-container"
+      className="border-30px p-3 border-green-600 flex flex-col items-center"
+    >
+      {props.isSubmit && (
+        <div
+          id="submit-answer"
+          className="p-3 m-1 w-full bg-blue-500 text-white"
+        >
+          <p className="p-0 m-0`">Success! Thank you for registering</p>
+        </div>
+      )}
 
       <form
-        method="POST"
-        action="#"
+        onSubmit={handleSubmit}
         className="flex flex-col items-center w-full space-y-4"
       >
         <input

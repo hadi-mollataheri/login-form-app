@@ -6,6 +6,7 @@ function App() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
+  const [isSubmit, setIsSubmit] = useState(false);
 
   return (
     <div
@@ -19,6 +20,8 @@ function App() {
         setLastName={setLastName}
         email={email}
         setEmail={setEmail}
+        isSubmit={isSubmit}
+        setIsSubmit={setIsSubmit}
       />
     </div>
   );
