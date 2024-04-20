@@ -7,15 +7,6 @@ function App() {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
 
-  // Other version: using one state for all three input fields:
-  /*
-    const [inputValues, setInputValue] = useState({
-      firstName: '',
-      lastName: '',
-      email: ''
-    });
-  */
-
   return (
     <div
       id="container"
@@ -29,10 +20,6 @@ function App() {
         email={email}
         setEmail={setEmail}
       />
-      {/* Tests */}
-      <p>{`I'm first name: ${firstName}`}</p>
-      <p>{`I'm last name: ${lastName}`}</p>
-      <p>{`I'm email: ${email}`}</p>
     </div>
   );
 }

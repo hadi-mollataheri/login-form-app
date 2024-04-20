@@ -12,17 +12,17 @@ function Form(props) {
     props.setEmail(target.value);
   };
 
-  // Other version: using one state for all three input fields:
-  /*
-
-  */
-
   return (
-    <div id="form-container" className="border-30px border-green-600 p-3">
+    <div id="form-container" className="border-30px p-3 border-green-600 flex flex-col items-center">
+
+      <div id="submit-answer" className="p-3 m-1 w-full bg-blue-500 text-white">
+        <p className="p-0 m-0`">Success! Thank you for registering</p>
+      </div>
+
       <form
         method="POST"
         action="#"
-        className="flex flex-col items-center space-y-4"
+        className="flex flex-col items-center w-full space-y-4"
       >
         <input
           type="text"
@@ -30,7 +30,7 @@ function Form(props) {
           name="first-name"
           value={props.firstName}
           placeholder="First Name"
-          className="p-3 bg-slate-100 m-1 w-full"
+          className="p-3 bg-slate-100 m-1 w-full my-0"
         />
         <input
           type="text"
@@ -51,7 +51,7 @@ function Form(props) {
         <input
           type="submit"
           value="Register"
-          className="p-3 bg-green-700 text-white w-full"
+          className="p-3 mx-1 bg-green-700 text-white w-full"
         />
       </form>
     </div>
