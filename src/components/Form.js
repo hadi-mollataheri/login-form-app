@@ -3,13 +3,30 @@ import React from "react";
 function Form(props) {
   // Create event handlers that update the states using setter props
   const handleFirstNameChange = ({ target }) => {
-    props.setFirstName(target.value);
+    // Because i want to update an state object i use prev => ... syntax not because
+    // my current state value is related to previous one
+    props.setInputValues((prevStateObj) => {
+      return {
+        ...prevStateObj,
+        firstName: target.value,
+      };
+    });
   };
   const handleLastNameChange = ({ target }) => {
-    props.setLastName(target.value);
+    props.setInputValues((prevStateObj) => {
+      return {
+        ...prevStateObj,
+        lastName: target.value,
+      };
+    });
   };
   const handleEmailChange = ({ target }) => {
-    props.setEmail(target.value);
+    props.setInputValues((prevStateObj) => {
+      return {
+        ...prevStateObj,
+        email: target.value,
+      };
+    });
   };
 
   // Other version: using one state for all three input fields:
@@ -28,7 +45,7 @@ function Form(props) {
           type="text"
           onChange={handleFirstNameChange}
           name="first-name"
-          value={props.firstName}
+          value={props.inputValues.firstName}
           placeholder="First Name"
           className="p-3 bg-slate-100 m-1 w-full"
         />
@@ -36,7 +53,7 @@ function Form(props) {
           type="text"
           onChange={handleLastNameChange}
           name="last-name"
-          value={props.lastName}
+          value={props.inputValues.lastName}
           placeholder="Last Name"
           className="p-3 bg-slate-100 m-1 w-full"
         />
@@ -44,7 +61,7 @@ function Form(props) {
           type="email"
           onChange={handleEmailChange}
           name="email"
-          value={props.email}
+          value={props.inputValues.email}
           placeholder="Email"
           className="p-3 bg-slate-100 m-1 w-full"
         />
