@@ -42,6 +42,8 @@ function Form(props) {
           value={props.firstName}
           placeholder="First Name"
           className="p-3 bg-slate-100 m-1 w-full my-0"
+          required
+          disabled={props.isSubmit}
         />
         <input
           type="text"
@@ -50,6 +52,8 @@ function Form(props) {
           value={props.lastName}
           placeholder="Last Name"
           className="p-3 bg-slate-100 m-1 w-full"
+          required
+          disabled={props.isSubmit}
         />
         <input
           type="email"
@@ -58,11 +62,14 @@ function Form(props) {
           value={props.email}
           placeholder="Email"
           className="p-3 bg-slate-100 m-1 w-full"
+          required
+          disabled={props.isSubmit}
         />
         <input
           type="submit"
           value="Register"
           className="p-3 mx-1 bg-green-700 text-white w-full"
+          disabled={props.isSubmit}
         />
       </form>
     </div>
