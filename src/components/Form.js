@@ -25,13 +25,13 @@ function Form(props) {
   return (
     <div
       id="form-container"
-      className="border-30px p-3 border-green-600 flex flex-col items-center justify-center"
+      className="p-3 flex flex-col items-center justify-center bg-white shadow-2xl"
     >
       {/* If submit button is clicked and if our input values are valid(exist) then render our success message */}
       {props.isSubmitted && props.isValid && (
         <div
           id="submit-answer"
-          className="p-3 my-1 mx-auto w-full bg-blue-500 text-white text-center"
+          className="p-3 my-1 mx-auto w-full bg-blue-500 text-white text-center transition-all"
         >
           <p className="p-0 m-0`">Success! Thank you for registering</p>
         </div>
@@ -39,7 +39,7 @@ function Form(props) {
 
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col items-center w-full space-y-4"
+        className="flex flex-col items-center w-full space-y-4 transition-all"
       >
         <div id="firstName" className="w-full">
           <input
