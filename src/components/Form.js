@@ -39,7 +39,7 @@ function Form(props) {
 
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col items-center w-full space-y-4 transition-all"
+        className="flex flex-col items-center w-full space-y-4 transition-all min-w-72 max-w-72"
       >
         <div id="firstName" className="w-full">
           <input

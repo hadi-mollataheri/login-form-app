@@ -13,7 +13,7 @@ function App() {
   return (
     <div
       id="container"
-      className="flex flex-col items-center justify-center mt-20 p-5 bg-green-500"
+      className="flex flex-col items-center justify-center mt-20 p-5 bg-green-500 min-w-64"
     >
       <Form
         firstName={firstName}
