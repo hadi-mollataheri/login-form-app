@@ -11,10 +11,15 @@ function Form(props) {
   const handleEmailChange = ({ target }) => {
     props.setEmail(target.value);
   };
-
+  // handleSubmit should always update the isSubmitted sate to true but 
+  // *separately*(because these 2 are 2 separate condition that must be met and then our form is allowed to be submitted) 
+  // should check that if the inputs has values then update isValid to true
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.setIsSubmit(true);
+    if (props.firstName && props.lastName && props.email) {
+      props.setIsValid(true);
+    }
+    props.setIsSubmitted(true);
   };
 
   return (
@@ -22,7 +27,8 @@ function Form(props) {
       id="form-container"
       className="border-30px p-3 border-green-600 flex flex-col items-center justify-center"
     >
-      {props.isSubmit && (
+      {/* If submit button is clicked and if our input values are valid(exist) then render our success message */}
+      {props.isSubmitted && props.isValid && (
         <div
           id="submit-answer"
           className="p-3 my-1 mx-auto w-full bg-blue-500 text-white text-center"
@@ -44,7 +50,7 @@ function Form(props) {
             placeholder="First Name"
             className="p-3 bg-slate-100 mx-auto w-full my-0"
           />
-          {!props.firstName && props.isSubmit ? (
+          {!props.firstName && props.isSubmitted ? (
             <span className="text-sm text-red-600 mt-0.5">
               Please enter a first name
             </span>
@@ -59,7 +65,7 @@ function Form(props) {
             placeholder="Last Name"
             className="p-3 bg-slate-100 mx-auto w-full my-0"
           />
-          {!props.lastName && props.isSubmit ? (
+          {!props.lastName && props.isSubmitted ? (
             <span className="text-sm text-red-600 mt-0.5">
               Please enter a last name
             </span>
@@ -74,7 +80,7 @@ function Form(props) {
             placeholder="Email"
             className="p-3 bg-slate-100 mx-auto w-full my-0"
           />
-          {!props.email && props.isSubmit ? (
+          {!props.email && props.isSubmitted ? (
             <span className="text-sm text-red-600 mt-0.5">
               Please enter an email
             </span>
@@ -85,7 +91,6 @@ function Form(props) {
             type="submit"
             value="Register"
             className="p-3 bg-green-700 text-white w-full"
-            disabled={props.isSubmit}
           />
         </div>
       </form>

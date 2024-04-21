@@ -6,7 +6,9 @@ function App() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
-  const [isSubmit, setIsSubmit] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  // Create a state for checking the validity of input values(that they are not empty)
+  const [isValid, setIsValid] = useState(false);
 
   return (
     <div
@@ -20,8 +22,10 @@ function App() {
         setLastName={setLastName}
         email={email}
         setEmail={setEmail}
-        isSubmit={isSubmit}
-        setIsSubmit={setIsSubmit}
+        isSubmitted={isSubmitted}
+        setIsSubmitted={setIsSubmitted}
+        isValid={isValid}
+        setIsValid={setIsValid}
       />
     </div>
   );
