@@ -41,13 +41,14 @@ function Form(props) {
         onSubmit={handleSubmit}
         className="flex flex-col items-center w-full space-y-4"
       >
-        <div id="input-1" className="w-full">
+        <div id="firstName" className="w-full">
           <input
             type="text"
             onChange={handleFirstNameChange}
             name="first-name"
             value={props.firstName}
             placeholder="First Name"
+            disabled={props.isSubmitted && props.isValid}
             className="p-3 bg-slate-100 mx-auto w-full my-0"
           />
           {!props.firstName && props.isSubmitted ? (
@@ -56,13 +57,14 @@ function Form(props) {
             </span>
           ) : null}
         </div>
-        <div id="input-2" className="w-full">
+        <div id="lastName" className="w-full">
           <input
             type="text"
             onChange={handleLastNameChange}
             name="last-name"
             value={props.lastName}
             placeholder="Last Name"
+            disabled={props.isSubmitted && props.isValid}
             className="p-3 bg-slate-100 mx-auto w-full my-0"
           />
           {!props.lastName && props.isSubmitted ? (
@@ -71,13 +73,14 @@ function Form(props) {
             </span>
           ) : null}
         </div>
-        <div id="input-3" className="w-full">
+        <div id="email" className="w-full">
           <input
             type="email"
             onChange={handleEmailChange}
             name="email"
             value={props.email}
             placeholder="Email"
+            disabled={props.isSubmitted && props.isValid}
             className="p-3 bg-slate-100 mx-auto w-full my-0"
           />
           {!props.email && props.isSubmitted ? (
@@ -90,6 +93,7 @@ function Form(props) {
           <input
             type="submit"
             value="Register"
+            disabled={props.isSubmitted && props.isValid}
             className="p-3 bg-green-700 text-white w-full"
           />
         </div>
