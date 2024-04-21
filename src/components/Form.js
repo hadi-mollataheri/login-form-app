@@ -43,12 +43,12 @@ function Form(props) {
             value={props.firstName}
             placeholder="First Name"
             className="p-3 bg-slate-100 mx-auto w-full my-0"
-            required
-            disabled={props.isSubmit}
           />
-          <span className="text-sm text-red-600 mt-0.5">
-            Please enter a first name
-          </span>
+          {!props.firstName && props.isSubmit ? (
+            <span className="text-sm text-red-600 mt-0.5">
+              Please enter a first name
+            </span>
+          ) : null}
         </div>
         <div id="input-2" className="w-full">
           <input
@@ -58,12 +58,12 @@ function Form(props) {
             value={props.lastName}
             placeholder="Last Name"
             className="p-3 bg-slate-100 mx-auto w-full my-0"
-            required
-            disabled={props.isSubmit}
           />
-          <span className="text-sm text-red-600 mt-0.5">
-            Please enter a last name
-          </span>
+          {!props.lastName && props.isSubmit ? (
+            <span className="text-sm text-red-600 mt-0.5">
+              Please enter a last name
+            </span>
+          ) : null}
         </div>
         <div id="input-3" className="w-full">
           <input
@@ -73,12 +73,12 @@ function Form(props) {
             value={props.email}
             placeholder="Email"
             className="p-3 bg-slate-100 mx-auto w-full my-0"
-            required
-            disabled={props.isSubmit}
           />
-          <span className="text-sm text-red-600 mt-0.5">
-            Please enter an email
-          </span>
+          {!props.email && props.isSubmit ? (
+            <span className="text-sm text-red-600 mt-0.5">
+              Please enter an email
+            </span>
+          ) : null}
         </div>
         <div id="input-4" className="w-full">
           <input
