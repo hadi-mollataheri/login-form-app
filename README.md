@@ -1,7 +1,9 @@
 # Explanation
 This is a *Registration Form* app that I built with **React.js**.
 
-Topics: Controlled component, Props, State hook ,TailwindCss
+There is an other version of states for input values that i used one state for them in **feature/login-logic-one-state-version** branch.
+
+*Topics:* Controlled component, Props, State hook ,TailwindCss
 
 I embarked on this project as a series of practice exercises after dedicating a couple of years to learning front-end web development. My goal was twofold: to enhance my coding skills and bolster my resume, ultimately preparing myself for the job market.
 
